@@ -115,4 +115,43 @@ describe("Category tests", () => {
 
     expect(category.created_at).toBe(props.created_at);
   });
+
+  test("update name and description", () => {
+    const props = {
+      name: "test",
+    };
+
+    const category = new Category(props);
+
+    category.update("test1", "description1");
+
+    expect(category.name).toBe("test1");
+    expect(category.description).toBe("description1");
+  });
+
+  test("activate", () => {
+    const props = {
+      name: "test",
+      is_active: false,
+    };
+
+    const category = new Category(props);
+
+    category.activate();
+
+    expect(category.is_active).toBe(true);
+  });
+
+  test("deactivate", () => {
+    const props = {
+      name: "test",
+      is_active: true,
+    };
+
+    const category = new Category(props);
+
+    category.deactivate();
+
+    expect(category.is_active).toBe(false);
+  });
 });
