@@ -22,7 +22,7 @@ describe("UnitqueEntityId tests", () => {
   it("should create a unique entity id", () => {
     const spy = spyValidateMethod();
     const vo = new UniqueEntityId();
-    expect(vo.id).toBeTruthy();
+    expect(vo.value).toBeTruthy();
     expect(spy).toHaveBeenCalled();
   });
 });
