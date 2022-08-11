@@ -3,6 +3,9 @@ import { omit } from "lodash";
 import { Category, CategoryProps } from "./category";
 
 describe("Category tests", () => {
+  beforeEach(() => {
+    Category.validate = jest.fn();
+  });
   test("constructor of category", () => {
     const props = {
       name: "test",
@@ -12,7 +15,7 @@ describe("Category tests", () => {
     };
 
     const category = new Category(props);
-
+    expect(Category.validate).toHaveBeenCalled();
     expect(category.props).toStrictEqual(props);
   });
   test("constructor of category - optional properties", () => {
@@ -122,9 +125,9 @@ describe("Category tests", () => {
     };
 
     const category = new Category(props);
-
     category.update("test1", "description1");
 
+    expect(Category.validate).toBeCalledTimes(2);
     expect(category.name).toBe("test1");
     expect(category.description).toBe("description1");
   });
