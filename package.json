@@ -7,7 +7,7 @@
     "ts-node": "ts-node",
     "tsc": "tsc",
     "clean:tsc": "rm tsconfig.tsbuildinfo",
-    "test": "jest"
+    "test": "jest  --maxWorkers 4"
   },
   "keywords": [],
   "author": "",

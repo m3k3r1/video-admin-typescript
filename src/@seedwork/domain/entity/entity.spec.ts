@@ -10,7 +10,7 @@ describe("Entity Unit tests", () => {
     const entity = new StubEntity(arrange);
 
     expect(entity.props).toStrictEqual(arrange);
-    expect(entity.unityEntityId).toBeInstanceOf(UniqueEntityId);
+    expect(entity.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
     expect(entity.id).toBeDefined();
     expect(uuidValidate(entity.id)).toBeTruthy();
   });
@@ -21,7 +21,7 @@ describe("Entity Unit tests", () => {
     const entity = new StubEntity(arrange, uniqueEntityId);
 
     expect(entity.props).toStrictEqual(arrange);
-    expect(entity.unityEntityId).toBeInstanceOf(UniqueEntityId);
+    expect(entity.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
     expect(entity.id).toBe(uniqueEntityId.value);
   });
 
