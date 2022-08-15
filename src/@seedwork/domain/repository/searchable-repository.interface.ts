@@ -63,7 +63,7 @@ export class SearchParams {
     this._sort =
       value === null || value === undefined || value === "" ? null : `${value}`;
   }
-  get sort_dir(): SortDirection {
+  get sort_dir(): SortDirection | null {
     return this._sort_dir;
   }
 
@@ -75,7 +75,7 @@ export class SearchParams {
     const dir = `${value}`.toUpperCase();
     this._sort_dir = dir !== "ASC" && dir !== "DESC" ? "ASC" : dir;
   }
-  get filter(): string {
+  get filter(): string | null {
     return this._filter;
   }
 
