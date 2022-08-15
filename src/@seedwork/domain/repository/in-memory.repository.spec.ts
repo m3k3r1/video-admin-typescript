@@ -1,7 +1,7 @@
 import Entity from "../entity/entity";
 import NotFoundError from "../errors/not-found-error";
 import UniqueEntityId from "../value-objects/unique-entity-id.vo";
-import InMemoryRepository from "./in-memory.repository";
+import { InMemoryRepository } from "./in-memory.repository";
 
 type StubEntityProps = {
   name: string;
@@ -12,7 +12,7 @@ class StubEntity extends Entity<StubEntityProps> {}
 
 class StubInMemoryRepository extends InMemoryRepository<StubEntity> {}
 
-describe("InMemeoryRepository", () => {
+describe("InMemoryRepository", () => {
   let repository: StubInMemoryRepository;
 
   beforeEach(() => {
